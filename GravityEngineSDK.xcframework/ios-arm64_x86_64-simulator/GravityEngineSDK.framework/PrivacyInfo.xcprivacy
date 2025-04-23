@@ -83,7 +83,7 @@
 	</array>
 	<key>NSPrivacyTrackingDomains</key>
 	<array>
-		<string>backend-pro.gravity-engine.com</string>
+		<string>api.gravity-engine.com</string>
 	</array>
 	<key>NSPrivacyAccessedAPITypes</key>
 	<array>
