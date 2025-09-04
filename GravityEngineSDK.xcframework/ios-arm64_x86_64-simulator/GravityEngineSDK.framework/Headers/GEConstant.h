@@ -177,14 +177,14 @@ typedef NS_OPTIONS(NSInteger, GEThirdPartyShareType) {
     GEThirdPartyShareTypeFIREBASE           = 1 << 10,
     
     
-    TDThirdPartyShareTypeNONE               = GEThirdPartyShareTypeNONE,
-    TDThirdPartyShareTypeAPPSFLYER          = GEThirdPartyShareTypeAPPSFLYER,
-    TDThirdPartyShareTypeIRONSOURCE         = GEThirdPartyShareTypeIRONSOURCE,
-    TDThirdPartyShareTypeADJUST             = GEThirdPartyShareTypeADJUST,
-    TDThirdPartyShareTypeBRANCH             = GEThirdPartyShareTypeBRANCH,
-    TDThirdPartyShareTypeTOPON              = GEThirdPartyShareTypeTOPON,
-    TDThirdPartyShareTypeTRACKING           = GEThirdPartyShareTypeTRACKING,
-    TDThirdPartyShareTypeTRADPLUS           = GEThirdPartyShareTypeTRADPLUS,
+    GPThirdPartyShareTypeNONE               = GEThirdPartyShareTypeNONE,
+    GPThirdPartyShareTypeAPPSFLYER          = GEThirdPartyShareTypeAPPSFLYER,
+    GPThirdPartyShareTypeIRONSOURCE         = GEThirdPartyShareTypeIRONSOURCE,
+    GPThirdPartyShareTypeADJUST             = GEThirdPartyShareTypeADJUST,
+    GPThirdPartyShareTypeBRANCH             = GEThirdPartyShareTypeBRANCH,
+    GPThirdPartyShareTypeTOPON              = GEThirdPartyShareTypeTOPON,
+    GPThirdPartyShareTypeTRACKING           = GEThirdPartyShareTypeTRACKING,
+    GPThirdPartyShareTypeTRADPLUS           = GEThirdPartyShareTypeTRADPLUS,
     
 };
 
