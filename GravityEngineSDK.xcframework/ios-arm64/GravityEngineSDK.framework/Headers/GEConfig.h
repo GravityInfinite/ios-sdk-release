@@ -50,11 +50,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The maximum number of cached events, the default is 10000, the minimum is 5000
  */
-@property (class,  nonatomic) NSInteger maxNumEvents DEPRECATED_MSG_ATTRIBUTE("Please config TAConfigInfo in main info.plist");
+@property (class,  nonatomic) NSInteger maxNumEvents DEPRECATED_MSG_ATTRIBUTE("Please config GEConfigInfo in main info.plist");
 /**
  Data cache expiration time, the default is 10 days, the longest is 10 days
  */
-@property (class,  nonatomic) NSInteger expirationDays DEPRECATED_MSG_ATTRIBUTE("Please config TAConfigInfo in main info.plist");
+@property (class,  nonatomic) NSInteger expirationDays DEPRECATED_MSG_ATTRIBUTE("Please config GEConfigInfo in main info.plist");
 /**
  appid
  */
