@@ -12,6 +12,7 @@ FOUNDATION_EXTERN NSString *const VERSION;
 @property (nonatomic, copy) NSString *uniqueId;
 @property (nonatomic, copy) NSString *deviceId;
 @property (nonatomic, copy) NSString *appVersion;
+@property (nonatomic, assign) int buildVersionCode;
 @property (nonatomic, readonly) BOOL isFirstOpen;
 @property (nonatomic, copy) NSString *libName;
 @property (nonatomic, copy) NSString *libVersion;
