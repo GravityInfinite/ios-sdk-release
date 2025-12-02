@@ -16,6 +16,7 @@ FOUNDATION_EXTERN NSString *const VERSION;
 @property (nonatomic, readonly) BOOL isFirstOpen;
 @property (nonatomic, copy) NSString *libName;
 @property (nonatomic, copy) NSString *libVersion;
+@property (nonatomic, copy) NSString *paId;
 
 + (NSString *)libVersion;
 + (NSString*)bundleId;

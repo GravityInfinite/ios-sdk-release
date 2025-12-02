@@ -111,6 +111,17 @@ app launchOptions
 /// enable encryption
 @property (nonatomic, assign) BOOL enableEncrypt;
 
+
+/// 是否设置为GDPR区域，默认为NO关闭
+@property (nonatomic, assign) BOOL isGDPRArea;
+
+/// 如果您的应用需要符合《儿童在线隐私权保护法》(COPPA) 规定，设置 isCoppaEnabled = YES,，默认为NO关闭
+@property (nonatomic, assign) BOOL isCoppaEnabled;
+
+///如果您的应用会定向到不满 13 周岁的儿童，则需要将其标记为儿童应用 (Kids App)，设置 isKidsAppEnabled = YES，默认为NO关闭
+@property (nonatomic, assign) BOOL isKidsAppEnabled;
+
+
 #if TARGET_OS_IOS
 /// Get local key configuration
 @property (nonatomic, strong) GESecretKey *secretKey;
@@ -119,5 +130,6 @@ app launchOptions
 /// instance token
 - (NSString *)getMapInstanceToken;
 
+-(BOOL)isCanReportIDs;
 @end
 NS_ASSUME_NONNULL_END
