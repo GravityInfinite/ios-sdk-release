@@ -199,3 +199,13 @@ typedef NS_ENUM(NSInteger, GETrackStatus) {
     /// reset normal
     GETrackStatusNormal
 };
+
+
+typedef NS_ENUM(NSInteger, GEDryRunEventEmptyType) {
+    ///没开启演练模式
+    GEDryRunEventEmptyTypeNotEnable,
+    /// 不在回传窗口期
+    GEDryRunEventEmptyTypeNoInPostbackWindow,
+    /// 扣量不回传
+    GEDryRunEventEmptyTypeSkip
+};

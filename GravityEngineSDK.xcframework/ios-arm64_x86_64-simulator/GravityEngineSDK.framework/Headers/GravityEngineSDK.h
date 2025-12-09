@@ -76,6 +76,13 @@ typedef void (^CallbackWithSuccess)(NSDictionary *response);
 
 typedef void (^CallbackWithError)(NSError * error);
 
+@protocol GravityDryRunEventDelegate <NSObject>
+-(void)onFailed:(NSString *)errorMsg;
+-(void)onEmpty:(GEDryRunEventEmptyType)emptyType;
+-(void)onTrackPay:(NSString *)mediaType payAmount:(int)amount traceId:(NSString*)traceId otherParams:(NSDictionary*)otherParams;
+-(void)onTrackKeyActive:(NSString *)mediaType traceId:(NSString*)traceId otherParams:(NSDictionary*)otherParams;
+@end
+
 @interface GravityEngineSDK : NSObject
 
 #pragma mark - Tracking
@@ -134,7 +141,7 @@ typedef void (^CallbackWithError)(NSError * error);
  * 上报业务注册事件
  *
  */
-- (void)trackRegisterEvent;
+- (NSString*)trackRegisterEvent;
 
 /**
  * 上报付费事件
@@ -145,7 +152,7 @@ typedef void (^CallbackWithError)(NSError * error);
  * @param payReason  付费原因 例如：购买钻石、办理月卡
  * @param payMethod  付费方式 例如：支付宝、微信、银联等
  */
-- (void)trackPayEventWithAmount:(int)payAmount withPayType:(NSString *)payType withOrderId:(NSString *)orderId withPayReason:(NSString *)payReason withPayMethod:(NSString *)payMethod;
+- (NSString*)trackPayEventWithAmount:(int)payAmount withPayType:(NSString *)payType withOrderId:(NSString *)orderId withPayReason:(NSString *)payReason withPayMethod:(NSString *)payMethod;
 
 /**
  * 上报提现事件
@@ -156,7 +163,7 @@ typedef void (^CallbackWithError)(NSError * error);
  * @param payReason  提现原因 例如：用户首次提现、用户抽奖提现
  * @param payMethod  提现支付方式 例如：支付宝、微信、银联等
  */
-- (void)trackWithdrawEvent:(int)payAmount withPayType:(NSString *)payType withOrderId:(NSString *)orderId withPayReason:(NSString *)payReason withPayMethod:(NSString *)payMethod;
+- (NSString*)trackWithdrawEvent:(int)payAmount withPayType:(NSString *)payType withOrderId:(NSString *)orderId withPayReason:(NSString *)payReason withPayMethod:(NSString *)payMethod;
 
 /**
  * 上报广告事件
@@ -170,17 +177,17 @@ typedef void (^CallbackWithError)(NSError * error);
  * @param duration      广告播放时长（单位为秒）
  * @param isPlayOver    广告是否播放完毕
  */
-- (void)trackAdLoadEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType;
+- (NSString *)trackAdLoadEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType;
 
-- (void)trackAdShowEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm;
+- (NSString *)trackAdShowEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm;
 
-- (void)trackAdSkipEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm;
+- (NSString *)trackAdSkipEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm;
 
-- (void)trackAdClickEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm;
+- (NSString *)trackAdClickEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm;
 
-- (void)trackAdPlayStartEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm;
+- (NSString *)trackAdPlayStartEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm;
 
-- (void)trackAdPlayEndEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm withDruation:(NSNumber *)duration withIsPlayOver:(BOOL)isPlayOver;
+- (NSString *)trackAdPlayEndEventWithUninType:(NSString *)adUnionType withPlacementId:(NSString *)adPlacementId withSourceId:(NSString *)adSourceId withAdType:(NSString *)adType withAdnType:(NSString *)adAdnType withEcpm:(NSNumber *)ecpm withDruation:(NSNumber *)duration withIsPlayOver:(BOOL)isPlayOver;
 
 
 /**
@@ -198,7 +205,7 @@ typedef void (^CallbackWithError)(NSError * error);
 
  @param event         event name
  */
-- (void)track:(NSString *)event;
+- (NSString*)track:(NSString *)event;
 
 
 /**
@@ -207,7 +214,7 @@ typedef void (^CallbackWithError)(NSError * error);
  @param event         event name
  @param propertieDict event properties
  */
-- (void)track:(NSString *)event properties:(nullable NSDictionary *)propertieDict;
+- (NSString*)track:(NSString *)event properties:(nullable NSDictionary *)propertieDict;
 
 /**
  Track Events
@@ -216,7 +223,7 @@ typedef void (^CallbackWithError)(NSError * error);
  @param propertieDict event properties
  @param time          event trigger time
  */
-- (void)track:(NSString *)event properties:(nullable NSDictionary *)propertieDict time:(NSDate *)time __attribute__((deprecated("please use track:properties:time:timeZone: method")));
+- (NSString*)track:(NSString *)event properties:(nullable NSDictionary *)propertieDict time:(NSDate *)time __attribute__((deprecated("please use track:properties:time:timeZone: method")));
 
 /**
  Track Events
@@ -226,14 +233,14 @@ typedef void (^CallbackWithError)(NSError * error);
   @param time event trigger time
   @param timeZone event trigger time time zone
   */
-- (void)track:(NSString *)event properties:(nullable NSDictionary *)propertieDict time:(NSDate *)time timeZone:(NSTimeZone *)timeZone;
+- (NSString*)track:(NSString *)event properties:(nullable NSDictionary *)propertieDict time:(NSDate *)time timeZone:(NSTimeZone *)timeZone;
 
 /**
  Track Events
  
   @param eventModel event Model
   */
-- (void)trackWithEventModel:(GEEventModel *)eventModel;
+- (NSString*)trackWithEventModel:(GEEventModel *)eventModel;
 
 /**
  Get the events collected in the App Extension and report them
@@ -632,6 +639,7 @@ typedef void (^CallbackWithError)(NSError * error);
 
 + (nullable NSString *)getLocalRegion;
 
+-(void)dryRunEventWithCallback:(NSString *)traceId otherParams:(NSDictionary*)otherParams callback:(id<GravityDryRunEventDelegate>)callback;
 @end
 
 NS_ASSUME_NONNULL_END
