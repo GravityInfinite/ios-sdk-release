@@ -122,6 +122,8 @@ app launchOptions
 @property (nonatomic, assign) BOOL isKidsAppEnabled;
 
 
+///前台会话阀值（频繁切换前后台，AppEnd时间会很小，可以设置这个值忽略这种操作）,当AppEnd发生时，事件少于设置的time，会忽略计时
+@property (nonatomic, assign) int foregroundSessionThreshold;
 #if TARGET_OS_IOS
 /// Get local key configuration
 @property (nonatomic, strong) GESecretKey *secretKey;
