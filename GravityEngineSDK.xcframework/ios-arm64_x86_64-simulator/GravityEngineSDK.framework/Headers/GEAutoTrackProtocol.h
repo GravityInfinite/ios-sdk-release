@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol TDUIViewAutoTrackDelegate
+@protocol GEUIViewAutoTrackDelegate
 
 @optional
 

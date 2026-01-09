@@ -76,7 +76,7 @@ typedef NS_OPTIONS(NSInteger, GESSLPinningMode) {
 /**
  Custom HTTPS Authentication
 */
-typedef NSURLSessionAuthChallengeDisposition (^TDURLSessionDidReceiveAuthenticationChallengeBlock)(NSURLSession *_Nullable session, NSURLAuthenticationChallenge *_Nullable challenge, NSURLCredential *_Nullable __autoreleasing *_Nullable credential);
+typedef NSURLSessionAuthChallengeDisposition (^GEURLSessionDidReceiveAuthenticationChallengeBlock)(NSURLSession *_Nullable session, NSURLAuthenticationChallenge *_Nullable challenge, NSURLCredential *_Nullable __autoreleasing *_Nullable credential);
 
 
 

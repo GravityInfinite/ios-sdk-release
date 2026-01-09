@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL allowInvalidCertificates;
 @property (nonatomic, assign) BOOL validatesDomainName;
-@property (nonatomic, copy) TDURLSessionDidReceiveAuthenticationChallengeBlock sessionDidReceiveAuthenticationChallenge;
+@property (nonatomic, copy) GEURLSessionDidReceiveAuthenticationChallengeBlock sessionDidReceiveAuthenticationChallenge;
 + (instancetype)policyWithPinningMode:(GESSLPinningMode)pinningMode;
 + (instancetype)defaultPolicy;
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain;
