@@ -209,3 +209,14 @@ typedef NS_ENUM(NSInteger, GEDryRunEventEmptyType) {
     /// 扣量不回传
     GEDryRunEventEmptyTypeSkip
 };
+
+typedef NS_ENUM(NSInteger, GEDeviceInfoType) {
+    GEDeviceInfoType_DeviceId,
+    GEDeviceInfoType_DeviceId1,
+    GEDeviceInfoType_DeviceId2,
+    GEDeviceInfoType_ClientId,
+    GEDeviceInfoType_Idfa,
+    GEDeviceInfoType_Idfv,
+    GEDeviceInfoType_SdkVersion,
+    GEDeviceInfoType_SdkName,
+};

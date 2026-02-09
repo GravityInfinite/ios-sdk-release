@@ -600,18 +600,13 @@ typedef void (^CallbackWithError)(NSError * error);
 - (NSString *)getCurrentClientId;
 
 /**
- H5 is connected with the native APP SDK and used in conjunction with the addWebViewUserAgent interface
+ H5 is connected with the native APP SDK
 
  @param webView webView
  @param request NSURLRequest request
  @return YES：Process this request NO: This request has not been processed
  */
 - (BOOL)showUpWebView:(id)webView WithRequest:(NSURLRequest *)request;
-
-/**
- When connecting data with H5, you need to call this interface to configure UserAgent
- */
-//- (void)addWebViewUserAgent;
 
 /**
  Set Log level
@@ -651,6 +646,8 @@ typedef void (^CallbackWithError)(NSError * error);
 + (nullable NSString *)getLocalRegion;
 
 -(void)dryRunEventWithCallback:(NSString *)traceId otherParams:(NSDictionary*)otherParams callback:(id<GravityDryRunEventDelegate>)callback;
+
+-(void)getDeviceInfo:(GEDeviceInfoType)type callback:(void(^)(NSString * deviceInfo))completion;
 @end
 
 NS_ASSUME_NONNULL_END
