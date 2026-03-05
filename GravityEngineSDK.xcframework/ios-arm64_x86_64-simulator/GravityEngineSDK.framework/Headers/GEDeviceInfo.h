@@ -36,6 +36,9 @@ FOUNDATION_EXTERN NSString *const VERSION;
 
 - (NSString*)ge_iphoneType;
 - (NSString*)getIdentifier;
+
++ (NSString *)getMacDeviceId;
++ (NSString *)getMacAddress;
 @end
 
 NS_ASSUME_NONNULL_END

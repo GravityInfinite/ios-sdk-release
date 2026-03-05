@@ -539,8 +539,6 @@ typedef void (^CallbackWithError)(NSError * error);
  */
 - (void)setNetworkType:(GravityEngineNetworkType)type;
 
-#if TARGET_OS_IOS
-
 /**
  Enable Auto-Tracking
 
@@ -588,7 +586,6 @@ typedef void (^CallbackWithError)(NSError * error);
  */
 - (void)ignoreViewType:(Class)aClass;
 
-#endif
 
 //MARK: -
 

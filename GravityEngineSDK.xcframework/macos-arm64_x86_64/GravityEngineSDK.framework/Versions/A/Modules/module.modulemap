@@ -1,0 +1,6 @@
+framework module GravityEngineSDK {
+  umbrella header "GravityEngineSDK.h"
+  export *
+
+  module * { export * }
+}
