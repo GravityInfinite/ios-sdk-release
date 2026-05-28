@@ -127,26 +127,29 @@ typedef void (^CallbackWithError)(NSError * error);
 /**
  register GravityEngine
  */
-- (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withAsaEnable:(bool)enableAsa withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaid1:(NSString *)caid1_md5 withCaid2:(NSString *)caid2_md5 withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback __attribute__((deprecated("方法即将弃用,使用新方法initializeGravityEngineWithClientId:withUserName:withVersion:withAsaEnable:withIdfa:withIdfv:withCaidInfo:withSyncAttribution:withChannel:withSuccessCallback:withErrorCallback:")));
+- (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaid1:(NSString *)caid1_md5 withCaid2:(NSString *)caid2_md5 withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback __attribute__((deprecated("方法即将弃用,使用新方法initializeGravityEngineWithClientId:withUserName:withVersion:withAsaEnable:withIdfa:withIdfv:withCaidInfo:withSyncAttribution:withChannel:withSuccessCallback:withErrorCallback:")));
 
-- (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withAsaEnable:(bool)enableAsa withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaid1:(NSString *)caid1_md5 withCaid2:(NSString *)caid2_md5 withSyncAttribution:(bool)syncAttribution withCreateTime:(long)createTimestamp withCompany:(NSString *)company withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback __attribute__((deprecated("方法即将弃用,使用新方法initializeGravityEngineWithClientId:withUserName:withVersion:withAsaEnable:withIdfa:withIdfv:withCaidInfo:withSyncAttribution:withCreateTime:withCompany:withChannel:withSuccessCallback:withErrorCallback:")));
+- (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaid1:(NSString *)caid1_md5 withCaid2:(NSString *)caid2_md5 withSyncAttribution:(bool)syncAttribution withCreateTime:(long)createTimestamp withCompany:(NSString *)company withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback __attribute__((deprecated("方法即将弃用,使用新方法initializeGravityEngineWithClientId:withUserName:withVersion:withAsaEnable:withIdfa:withIdfv:withCaidInfo:withSyncAttribution:withCreateTime:withCompany:withChannel:withSuccessCallback:withErrorCallback:")));
 
-- (void)initializeGravityEngineWithAsaEnable:(bool)enableAsa withClientId:(NSString *)client_id withCaid1:(NSString *)caid1_md5 withCaid2:(NSString *)caid2_md5 withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback __attribute__((deprecated("方法即将弃用,使用新方法initializeGravityEngineWithAsaEnable:withClientId:withCaidInfo:withSyncAttribution:withChannel:withSuccessCallback:withErrorCallback:")));
+- (void)initializeGravityEngineWithClientId:(NSString *)client_id withCaid1:(NSString *)caid1_md5 withCaid2:(NSString *)caid2_md5 withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback __attribute__((deprecated("方法即将弃用,使用新方法initializeGravityEngineWithAsaEnable:withClientId:withCaidInfo:withSyncAttribution:withChannel:withSuccessCallback:withErrorCallback:")));
 
 
 #pragma mark - Other API
 
-- (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withAsaEnable:(bool)enableAsa withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaidInfo:(NSString *)caid_info withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback;
+- (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaidInfo:(NSString *)caid_info withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback;
 
-- (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withAsaEnable:(bool)enableAsa withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaidInfo:(NSString *)caid_info withSyncAttribution:(bool)syncAttribution withCreateTime:(long)createTimestamp withCompany:(NSString *)company withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback;
+- (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaidInfo:(NSString *)caid_info withSyncAttribution:(bool)syncAttribution withCreateTime:(long)createTimestamp withCompany:(NSString *)company withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback;
 
 
-- (void)initializeGravityEngineWithAsaEnable:(bool)enableAsa withClientId:(NSString *)client_id withCaidInfo:(NSString *)caid_info withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback;
+- (void)initializeGravityEngineWithClientId:(NSString *)client_id withCaidInfo:(NSString *)caid_info withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback;
 
 
 - (void)queryUserInfoWithSuccessCallback:(void(^)(NSDictionary* _Nonnull data))successCallback withErrorCallback:(CallbackWithError)errorCallback;
 
 - (void)uploadDeviceInfoWithIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaid1:(NSString *)caid1_md5 withCaid2:(NSString *)caid2_md5;
+
+
+-(void)updateUserInfo:(NSDictionary *)dataInfo;
 
 /**
  * 上报业务注册事件
