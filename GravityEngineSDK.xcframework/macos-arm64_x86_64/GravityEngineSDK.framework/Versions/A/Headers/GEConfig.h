@@ -70,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) NSString *accessToken;
 
+@property (nonatomic, copy) NSDictionary * presetSuperProperties;
 /**
  Initialize and configure background self-starting events
  YES: Collect background self-starting events
