@@ -123,6 +123,12 @@ typedef void (^CallbackWithError)(NSError * error);
 + (GravityEngineSDK *)startWithAppId:(NSString *)appId withUrl:(NSString *)url withConfig:(nullable GEConfig *)config;
 
 
+#pragma mark - Other API Old
+/**
+ register GravityEngine
+ */
+- (void)initializeGravityEngineWithClientId:(NSString *)client_id withCaid1:(NSString *)caid1_md5 withCaid2:(NSString *)caid2_md5 withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withAdData:(NSDictionary *)adData withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback __attribute__((deprecated("方法即将弃用,使用新方法initializeGravityEngineWithAsaEnable:withClientId:withCaidInfo:withSyncAttribution:withChannel:withSuccessCallback:withErrorCallback:")));
+
 #pragma mark - Other API
 
 - (void)initializeGravityEngineWithClientId:(NSString *) clientId withUserName:(NSString *)userName withVersion:(int)version withIdfa:(NSString *) idfa withIdfv:(NSString *)idfv withCaidInfo:(NSString *)caid_info withSyncAttribution:(bool)syncAttribution withChannel:(NSString *)channel withSuccessCallback:(CallbackWithSuccess)successCallback withErrorCallback:(CallbackWithError)errorCallback;
